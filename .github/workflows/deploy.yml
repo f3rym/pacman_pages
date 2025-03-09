@@ -26,9 +26,9 @@ jobs:
             -   name: Copy new push
                 run: |
                     mkdir -p deploy-temp
-                    ls 
                     pwd
                     cp -r src/* deploy-temp/
+                    ls deploy-temp
             #
             -   name: Create or switch in branch
                 run: |
@@ -42,6 +42,7 @@ jobs:
             #
             -   name: Move new files into root
                 run: |
+                    ls deploy-temp
                     mv deploy-temp/* .  # Перемещаем все файлы из deploy-temp в корень репозитория
                     rm -rf deploy-temp  # Удаляем временную папку
             -   name: Commit and push changes
