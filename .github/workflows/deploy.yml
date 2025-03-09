@@ -25,8 +25,9 @@ jobs:
                 #
             -   name: Copy new push
                 run: |
-                    ls
-                    cp -r ./* .
+                    mkdir -p deploy-temp
+                    cp -r ./* deploy-temp/
+                    ls deploy-temp/
             #
             -   name: Create or switch in branch
                 run: |
@@ -38,6 +39,10 @@ jobs:
                     git rm -rf .
                     git clean -fxd
             #
+            -   name: Move new files into root
+                run: |
+                    mv deploy-temp/* .  # Перемещаем все файлы из deploy-temp в корень репозитория
+                    rm -rf deploy-temp  # Удаляем временную папку
             -   name: Commit and push changes
                 run: |
                     git add .
