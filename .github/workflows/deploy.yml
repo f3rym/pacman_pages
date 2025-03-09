@@ -35,7 +35,8 @@ jobs:
             #
             -   name: Copy new push
                 run: |
-                    cp -r * .
+                    ls
+                    cp -r ./ * .
             -   name: Commit and push changes
                 run: |
                     git add .
