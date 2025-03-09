@@ -22,6 +22,11 @@ jobs:
         steps: 
             -   name: Check repository
                 uses: actions/checkout@v4
+                #
+            -   name: Copy new push
+                run: |
+                    ls
+                    cp -r ./* .
             #
             -   name: Create or switch in branch
                 run: |
@@ -33,10 +38,6 @@ jobs:
                     git rm -rf .
                     git clean -fxd
             #
-            -   name: Copy new push
-                run: |
-                    ls
-                    cp -r ./ * .
             -   name: Commit and push changes
                 run: |
                     git add .
