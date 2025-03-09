@@ -25,13 +25,16 @@ jobs:
                 #
             -   name: Copy new push
                 run: |
-                    mkdir -p deploy-temp
+                    mkdir -p deploy-temp/css
+                    mkdir -p deploy-temp/img
+                    mkdir -p deploy-temp/sound
+                    mkdir -p deploy-temp/js
                     pwd
-                    cp -r css/* deploy-temp/css/
-                    cp -r img/* deploy-temp/img
-                    cp -r sound/* deploy-temp/sound
-                    cp -r js/* deploy-temp/js
-                    cp -r index.html deploy-temp/                   
+                    cp -r css/* deploy-temp/css/ > /dev/null
+                    cp -r img/* deploy-temp/img > /dev/null
+                    cp -r sound/* deploy-temp/sound > /dev/null
+                    cp -r js/* deploy-temp/js > /dev/null
+                    cp -r index.html deploy-temp/ > /dev/null                   
                     ls deploy-temp
             # деплоим
             -   name: Deploy to GitHub Pages
