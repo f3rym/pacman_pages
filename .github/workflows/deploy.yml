@@ -28,7 +28,7 @@ jobs:
                     mkdir -p deploy-temp
                     ls 
                     pwd
-                    cp -r !(deploy-temp) deploy-temp/
+                    cp -r src/* deploy-temp/
             #
             -   name: Create or switch in branch
                 run: |
