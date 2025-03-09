@@ -26,7 +26,7 @@ jobs:
             -   name: Copy new push
                 run: |
                     mkdir -p deploy-temp
-                    cp -r ./* deploy-temp/
+                    cp -r * deploy-temp/
                     ls deploy-temp/
             #
             -   name: Create or switch in branch
