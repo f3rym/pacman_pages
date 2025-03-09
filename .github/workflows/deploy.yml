@@ -35,7 +35,7 @@ jobs:
             #
             -   name: Copy new push
                 run: |
-                    cp -r pacman_pages/* .
+                    cp -r * .
             -   name: Commit and push changes
                 run: |
                     git add .
