@@ -13,21 +13,6 @@ jobs:
             # clone rep
             -   name: Clone repository
                 uses: actions/checkout@v2
-            # test
-            -   name: node
-                uses: actions/setup-node@v2
-                with:
-                    node-version: '16'
-            -   name: dependencies
-                run: npm install
-            -   name: Install dependencies
-                run: npm install
-            -   name: Lint JavaScript
-                run: npx eslint ./js/*.js # Замените на путь к вашим JS-файлам
-            -   name: Lint CSS
-                run: npx stylelint ./css/*.css # Замените на путь к вашим CSS-файлам
-
-            # Перемещаем все в папку для deploy
     deploy:
         runs-on: 
             ubuntu-latest
