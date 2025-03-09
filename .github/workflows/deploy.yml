@@ -36,7 +36,6 @@ jobs:
             #
             -   name: Create or switch in branch
                 run: |
-                    git fetch origin
                     if git ls-remote --exit-code --heads origin gh-pages; then
                         git checkout gh-pages
                     else
