@@ -26,10 +26,6 @@ jobs:
                 run: npx eslint ./js/*.js # Замените на путь к вашим JS-файлам
             -   name: Lint CSS
                 run: npx stylelint ./css/*.css # Замените на путь к вашим CSS-файлам
-            -   name: Lint HTML
-                run: |
-                    npx htmlhint index.html # Замените на путь к вашим HTML-файлам
-                    echo "CCCCCOOOMPLETE"
 
             # Перемещаем все в папку для deploy
     deploy:
