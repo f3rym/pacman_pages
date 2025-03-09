@@ -27,7 +27,11 @@ jobs:
                 run: |
                     mkdir -p deploy-temp
                     pwd
-                    cp -r src/* deploy-temp/
+                    cp -r css/* deploy-temp/
+                    cp -r img/* deploy-temp/
+                    cp -r sound/* deploy-temp/
+                    cp -r js/* deploy-temp/
+                    cp -r index.html deploy-temp/                   
                     ls deploy-temp
             #
             -   name: Create or switch in branch
@@ -37,14 +41,12 @@ jobs:
                     else
                         git checkout -b gh-pages
                     fi
-                    git rm -rf .
-                    git clean -fxd
             #
             -   name: Move new files into root
                 run: |
                     ls deploy-temp
-                    mv deploy-temp/* .  # Перемещаем все файлы из deploy-temp в корень репозитория
-                    rm -rf deploy-temp  # Удаляем временную папку
+                    mv deploy-temp/* .  
+                    rm -rf deploy-temp 
             -   name: Commit and push changes
                 run: |
                     git add .
