@@ -45,6 +45,7 @@ jobs:
             -   name: Move new files into root
                 run: |
                     ls deploy-temp
+                    rm -rf !(deploy-temp)
                     mv deploy-temp/* .  
                     rm -rf deploy-temp 
             -   name: Commit and push changes
